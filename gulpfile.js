@@ -8,7 +8,7 @@ var source = require('vinyl-source-stream');
 var del = require('del');
 
 gulp.task('clean', function (cb) {
-  del('components', function () {
+  del('build', function () {
     cb();
   });
 });
