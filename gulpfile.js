@@ -20,19 +20,19 @@ gulp.task('mocha', shell.task('npm test', {
 
 gulp.task('test', function () {
   runSequence('mocha');
-  gulp.watch(['js/**/*.js','test/**/*.js'], ['mocha'])
+  gulp.watch(['components/**/*.js','test/**/*.js'], ['mocha'])
 });
 
 gulp.task('build', function () {
     browserify({
-    	entries: 'js/app.js',
+    	entries: 'components/app.js',
     	debug: true
     })
     .transform(babelify.configure({
 		  stage: 0 //Use ES7 transforms
     }))
     .bundle()
-    .pipe(source('./js/app.js'))
+    .pipe(source('./components/app.js'))
     .pipe(gulp.dest('./build'));
 });
 
@@ -50,5 +50,5 @@ gulp.task('develop', function (cb) {
 gulp.task('watch-source', ['build']);
 
 gulp.task('serve', function () {
-    gulp.watch(['js/**/*.js', '*.html'], ['watch-source']);
+    gulp.watch(['components/**/*.js', '*.html'], ['watch-source']);
 });
