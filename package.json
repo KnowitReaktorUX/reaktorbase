@@ -1,0 +1,28 @@
+{
+  "name": "knowit-seed-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.spec.js"
+  },
+  "author": "The cycling farmer",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel": "^5.5.7",
+    "babelify": "^6.2.0",
+    "browserify": "^11.0.1",
+    "chai": "^3.0.0",
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-shell": "^0.4.2",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.5",
+    "run-sequence": "^1.1.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
