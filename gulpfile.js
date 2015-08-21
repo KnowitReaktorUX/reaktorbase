@@ -1,7 +1,6 @@
 var gulp = require("gulp");
 var shell = require('gulp-shell');
 var plugins = require('gulp-load-plugins')({scope: ['dependencies']});
-var sourcemaps = require("gulp-sourcemaps");
 var runSequence = require('run-sequence');
 var browserify = require('browserify');
 var babelify = require('babelify');
