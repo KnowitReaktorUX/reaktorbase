@@ -1,6 +1,6 @@
 import React from 'react/addons';
 import assert from 'assert';
-import CheckboxWithLabel from '../../../components/checkboxwithlabel/checkboxwithlabel.react';
+import CheckboxWithLabel from '../../../app/components/checkboxwithlabel/checkboxwithlabel.react';
 
 const TestUtils = React.addons.TestUtils;
 
@@ -19,7 +19,7 @@ describe('CheckboxWithLabel component', function () {
 
 	    this.inputElement = inputComponent.getDOMNode();
       this.label        = TestUtils.findRenderedDOMComponentWithTag(
-                      renderedComponent, 
+                      renderedComponent,
                           'label');
     });
 
