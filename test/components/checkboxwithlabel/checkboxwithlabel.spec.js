@@ -8,7 +8,7 @@ describe('CheckboxWithLabel component', function () {
   	before('render and locate element', function () {
     	var renderedComponent = TestUtils.renderIntoDocument(
       		<CheckboxWithLabel labelOn="On" labelOff="Off" />
-    	);
+    	); 
 
 	    // Searching for <input> tag within rendered React component
 	    // Throws an exception if not found
@@ -19,7 +19,7 @@ describe('CheckboxWithLabel component', function () {
 
 	    this.inputElement = inputComponent.getDOMNode();
       this.label        = TestUtils.findRenderedDOMComponentWithTag(
-                      renderedComponent, 
+                      renderedComponent,
                           'label');
     });
 

@@ -5,7 +5,6 @@ class CheckboxWithLabel extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isChecked: this.props.isChecked };
-
   }
 
   onChange = (e) => {
@@ -18,7 +17,7 @@ class CheckboxWithLabel extends React.Component {
       <h1>This is a test</h1>
       <label>
         <input
-          type="checkbox"
+          type='checkbox'
           checked={this.state.isChecked}
           onChange={this.onChange}
         />
