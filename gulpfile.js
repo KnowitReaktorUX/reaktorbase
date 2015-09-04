@@ -8,8 +8,21 @@ var source = require('vinyl-source-stream');
 var del = require('del');
 var sass = require('gulp-sass');
 var run = require('gulp-run');
+var flatten = require('gulp-flatten');
 //gulp-watch
 
+//DEVELOP
+gulp.task('develop', function (cb) {
+    runSequence(
+        'clean',
+        ['js', 'sass', 'templates'],
+        'serve',
+        'server',
+        cb
+    );
+});
+
+//CLEAN
 gulp.task('clean', function (cb) {
   del('js', cb() );
 });
@@ -26,7 +39,7 @@ gulp.task('test', function () {
   gulp.watch(['app/**/*.js','test/**/*.js'], ['mocha'])
 });
 
-//BUILD
+//JS: BUILD
 gulp.task('js', function (cb) {
     //JS
     browserify({
@@ -38,50 +51,58 @@ gulp.task('js', function (cb) {
     }))
     .bundle()
     .pipe(source('app/components/app.js'))
-    .pipe(gulp.dest('./build'));
+    .pipe(flatten())
+    .pipe(gulp.dest('./build/js'));
     cb();
-});
-
-//DEVELOP
-gulp.task('develop', function (cb) {
-    runSequence(
-        'clean',
-        'bower',
-        ['js', 'sass', 'templates'],
-        'serve',
-        'server',
-        cb
-    );
 });
 
 //SASS
 gulp.task('sass', function (cb) {
   gulp.src('app/**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
+    .pipe(flatten())
     .pipe(gulp.dest('./build/stylesheets'));
     cb();
 });
 
 //SERVER
-// Use gulp-run to start a pipeline
 gulp.task('server', function () {
-  run('node server.js').exec()    // Writes "Hello World\n" to output/echo.
+  run('node server.js').exec()
 })
 
-//Fetch Bower components
-gulp.task('bower', function () {
-  run('bower update').exec()    // Writes "Hello World\n" to output/echo.
+//Fetch Bower & npm components
+gulp.task('setup', function () {
+  var bower_complete = false,
+      npm_complete = false;
+  //complete
+  var complete = function () {
+    if (bower_complete && npm_complete) {
+      run('asciify "Complete" -f larry3d').exec();
+    }
+  };
+  //bower
+  run('bower update').exec(function (status) {
+    console.log('-------------------- BOWER UPDATE: ' + ((status + '') === 'null' ? 'OK' : status) + ' --------------------');
+    bower_complete = true;
+    complete();
+  })
+  //npm
+  run('npm install').exec(function (status) {
+    console.log('-------------------- NPM INSTALL: ' + ((status + '') === 'null' ? 'OK' : status) + ' --------------------');
+    npm_complete = true;
+    complete();
+  })
 })
-
 
 //TEMPLATES
+//change to template names to .ejs, look att contains "template" instead.
+//gulp-flatten - remove folder structure in destination.
 gulp.task('templates', function (cb) {
   gulp.src('app/**/*.template')
+    .pipe(flatten())
     .pipe(gulp.dest('./build/templates'));
     cb();
 });
-//change to template names to .ejs, look att contains "template" instead.
-//gulp-flatten - remove folder structure in destination.
 
 gulp.task('watch-source', ['js']);
 
