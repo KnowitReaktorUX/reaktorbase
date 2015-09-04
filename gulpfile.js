@@ -43,14 +43,14 @@ gulp.task('test', function () {
 gulp.task('js', function (cb) {
     //JS
     browserify({
-    	entries: 'app/components/app.js',
+    	entries: 'app/framework/app.js',
     	debug: true
     })
     .transform(babelify.configure({
 		  stage: 0 //Use ES7 transforms
     }))
     .bundle()
-    .pipe(source('app/components/app.js'))
+    .pipe(source('app/framework/app.js'))
     .pipe(flatten())
     .pipe(gulp.dest('./build/js'));
     cb();
@@ -107,5 +107,5 @@ gulp.task('templates', function (cb) {
 gulp.task('watch-source', ['js']);
 
 gulp.task('serve', function () {
-    gulp.watch(['app/components/**/*.js', '*.html', 'app/components/**/*.scss'], ['watch-source']);
+    gulp.watch(['app/**/*.js', '*.html', 'app/**/*.scss'], ['watch-source']);
 });
