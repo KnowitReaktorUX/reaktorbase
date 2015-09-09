@@ -1,4 +1,5 @@
 var gulp = require("gulp"),
+    plugins = require('gulp-load-plugins')(),
     shell = require('gulp-shell'),
     plugins = require('gulp-load-plugins')({scope: ['dependencies']}),
     runSequence = require('run-sequence'),
@@ -10,14 +11,15 @@ var gulp = require("gulp"),
     run = require('gulp-run'),
     flatten = require('gulp-flatten'),
     connect = require('gulp-connect'),
-    assemble = require('assemble');
+    assemble = require('assemble'),
+    gulpAssemble = require('gulp-assemble'),
+    extname = require('gulp-extname');
     //gulp-watch
 
 //DEVELOP
 gulp.task('develop', function (cb) {
     runSequence(
-        'clean',
-        ['js', 'sass', 'templates'],
+        'build',
         'serve',
         'connect',
         //'server',
@@ -25,12 +27,39 @@ gulp.task('develop', function (cb) {
     );
 });
 
+
+//BUILD
+gulp.task('build', function (cb) {
+    runSequence(
+        'clean',
+        ['js', 'sass', 'templates', 'assemble'],
+        cb
+    );
+});
+
+
 //CONNECT
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
     livereload: false
   });
+});
+
+//ASSEMBLE
+gulp.task('assemble', function() {
+  assemble.layouts('./app/framework/default.hbs');
+  //assemble.partials(['./app/components', './app/blocks']);
+  assemble.data(['config/*.{json,yml}']);
+
+
+  gulp.src('./app/pages/**/*.hbs')
+    .pipe(gulpAssemble(assemble, {
+      layout: 'default'
+    }))
+    .pipe(extname())
+    .pipe(flatten())
+    .pipe(gulp.dest('build/mockups'));
 });
 
 //CLEAN
@@ -68,18 +97,9 @@ gulp.task('js', function (cb) {
 });
 
 //SASS
-gulp.task('sass', function (cb) {
-  gulp.src('app/**/*.scss')
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(flatten())
-    .pipe(gulp.dest('./build/stylesheets'));
-    cb();
-});
+gulp.task('sass', require('./config/tasks/sass')(gulp, plugins));
 
-//SERVER
-//gulp.task('server', function () {
-//  run('node server.js').exec()
-//})
+
 
 //Fetch Bower & npm components
 gulp.task('setup', function () {
@@ -115,8 +135,6 @@ gulp.task('templates', function (cb) {
     cb();
 });
 
-gulp.task('watch-source', ['js']);
-
 gulp.task('serve', function () {
-    gulp.watch(['app/**/*.js', '*.html', 'app/**/*.scss'], ['watch-source']);
+    gulp.watch(['app/**/*.js', '*.html', 'app/**/*.hbs', 'app/**/*.scss'], ['build']);
 });
