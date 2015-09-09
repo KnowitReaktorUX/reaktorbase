@@ -1,15 +1,17 @@
-var gulp = require("gulp");
-var shell = require('gulp-shell');
-var plugins = require('gulp-load-plugins')({scope: ['dependencies']});
-var runSequence = require('run-sequence');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var del = require('del');
-var sass = require('gulp-sass');
-var run = require('gulp-run');
-var flatten = require('gulp-flatten');
-//gulp-watch
+var gulp = require("gulp"),
+    shell = require('gulp-shell'),
+    plugins = require('gulp-load-plugins')({scope: ['dependencies']}),
+    runSequence = require('run-sequence'),
+    browserify = require('browserify'),
+    babelify = require('babelify'),
+    source = require('vinyl-source-stream'),
+    del = require('del'),
+    sass = require('gulp-sass'),
+    run = require('gulp-run'),
+    flatten = require('gulp-flatten'),
+    connect = require('gulp-connect'),
+    assemble = require('assemble');
+    //gulp-watch
 
 //DEVELOP
 gulp.task('develop', function (cb) {
@@ -17,9 +19,18 @@ gulp.task('develop', function (cb) {
         'clean',
         ['js', 'sass', 'templates'],
         'serve',
-        'server',
+        'connect',
+        //'server',
         cb
     );
+});
+
+//CONNECT
+gulp.task('connect', function() {
+  connect.server({
+    root: 'build',
+    livereload: false
+  });
 });
 
 //CLEAN
@@ -66,9 +77,9 @@ gulp.task('sass', function (cb) {
 });
 
 //SERVER
-gulp.task('server', function () {
-  run('node server.js').exec()
-})
+//gulp.task('server', function () {
+//  run('node server.js').exec()
+//})
 
 //Fetch Bower & npm components
 gulp.task('setup', function () {
