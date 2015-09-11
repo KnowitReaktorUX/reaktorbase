@@ -6,14 +6,9 @@ var gulp = require("gulp"),
     browserify = require('browserify'),
     babelify = require('babelify'),
     source = require('vinyl-source-stream'),
-    del = require('del'),
     sass = require('gulp-sass'),
     run = require('gulp-run'),
-    flatten = require('gulp-flatten'),
-    connect = require('gulp-connect'),
-    assemble = require('assemble'),
-    gulpAssemble = require('gulp-assemble'),
-    extname = require('gulp-extname');
+    flatten = require('gulp-flatten');
     //gulp-watch
 
 //DEVELOP
@@ -39,33 +34,11 @@ gulp.task('build', function (cb) {
 
 
 //CONNECT
-gulp.task('connect', function() {
-  connect.server({
-    root: 'build',
-    livereload: false
-  });
-});
-
+gulp.task('connect', require('./config/tasks/connect')(gulp, plugins));
 //ASSEMBLE
-gulp.task('assemble', function() {
-  assemble.layouts('./app/framework/default.hbs');
-  //assemble.partials(['./app/components', './app/blocks']);
-  assemble.data(['config/*.{json,yml}']);
-
-
-  gulp.src('./app/pages/**/*.hbs')
-    .pipe(gulpAssemble(assemble, {
-      layout: 'default'
-    }))
-    .pipe(extname())
-    .pipe(flatten())
-    .pipe(gulp.dest('build/mockups'));
-});
-
-//CLEAN
-gulp.task('clean', function (cb) {
-  del('js', cb() );
-});
+gulp.task('assemble', require('./config/tasks/assemble')(gulp, plugins));
+//ASSEMBLE
+gulp.task('clean', require('./config/tasks/clean')(gulp, plugins));
 
 //JS: MOCHA
 gulp.task('mocha', shell.task('npm test', {
