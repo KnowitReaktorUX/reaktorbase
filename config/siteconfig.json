@@ -1,4 +1,5 @@
 {
   "csspath": "/stylesheets/app.css",
-  "scriptpath": "/js/app.js"
+  "scriptpath": "/js/app.js",
+  "handlebarshelpers": "bower_components/knowit-ninja/helpers/*.js"
 }

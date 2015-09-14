@@ -12,7 +12,7 @@ class CheckboxWithLabel extends React.Component {
   render() {
     return (
       <div>
-      <h1>This is a test - component</h1>
+      <h2>Component - checkbox with label</h2>
       <label>
         <input
           type='checkbox'

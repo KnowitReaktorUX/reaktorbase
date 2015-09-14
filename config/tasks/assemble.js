@@ -8,8 +8,10 @@ module.exports = function (gulp, plugins) {
     gulp.task('assemble', function() {
       assemble.layouts('./app/framework/default.hbs');
       //assemble.partials(['./app/components', './app/blocks']);
+      //doesnt seem able to handle multiple partial locations.
+      assemble.helpers(['./bower_components/knowit-ninja/helpers/times.js']);
+      assemble.partials(['./app/**/*.hbs']);
       assemble.data(['config/*.{json,yml}']);
-
 
       gulp.src('./app/pages/**/*.hbs')
         .pipe(gulpAssemble(assemble, {
