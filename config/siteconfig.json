@@ -1,4 +1,4 @@
 {
-  "csspath": "/stylesheets/",
-  "scriptpath": "/js/"
+  "csspath": "/stylesheets/app.css",
+  "scriptpath": "/js/app.js"
 }
