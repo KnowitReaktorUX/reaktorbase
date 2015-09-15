@@ -1,0 +1,26 @@
+.component-search {
+  position: relative;
+
+  .search-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 0 0 0;
+    width: 100px;
+  }
+  .search-field {
+    padding: 0 110px 0 110px;
+  }
+  .search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 0 0 0;
+    height: 100%;
+    padding: 0;
+    width: 100px;
+  }
+
+  //@media {$medium-up} {}
+  //@media {$large-up} {}
+}

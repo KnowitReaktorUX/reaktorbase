@@ -12,6 +12,7 @@
     "foundation-apps": "^1.1.0",
     "gasp": "0.0.2",
     "gulp-run": "^1.6.10",
+    "handlebars": "^4.0.2",
     "react": "^0.13.3"
   },
   "devDependencies": {
