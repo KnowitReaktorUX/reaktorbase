@@ -1,7 +1,7 @@
 var assemble = require('fabricator-assemble'),
     runSequence = require('run-sequence'),
     del = require('del'),
-    Handlebars = require('handlebars'),
+    handlebars = require('handlebars'),
     //gulpAssemble = require('gulp-assemble'), //UNINSTSLL!!
     //extname = require('gulp-extname'), //UNINSTALL!!
     flatten = require('gulp-flatten');
@@ -48,7 +48,7 @@ module.exports = function (gulp, plugins) {
               views: 'views',
               docs: 'docs'
           },
-          helpers: require('../../bower_components/knowit-ninja/helpers'),
+          helpers: require('../../bower_components/knowit-ninja/helpers')(handlebars),
           logErrors: false,
           onError: function(error) {
             //console.log(error);
