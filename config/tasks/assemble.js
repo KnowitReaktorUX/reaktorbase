@@ -2,17 +2,9 @@ var assemble = require('fabricator-assemble'),
     runSequence = require('run-sequence'),
     del = require('del'),
     handlebars = require('handlebars'),
-    //gulpAssemble = require('gulp-assemble'), //UNINSTSLL!!
-    //extname = require('gulp-extname'), //UNINSTALL!!
     flatten = require('gulp-flatten');
 
-//var testasa = require('./config/tasks/sass')(null, null);
 //ASSEMBLE
-var testar = require('../../bower_components/knowit-ninja/helpers');
-
-
-console.log(testar);
-
 module.exports = function (gulp, plugins) {
   return function () {
     gulp.task('assemble', function (cb) {
@@ -40,7 +32,7 @@ module.exports = function (gulp, plugins) {
           layouts: 'app/framework/*',
           layoutIncludes: 'app/framework/includes/*.html',
           views: ['app/pages/**/*.html'],
-          materials: ['app/blocks/**/*.html','app/components/**/*.html'],
+          materials: ['app/blocks/**/*.html', 'app/components/**/*.html'],
           data: 'config/*.{json,yml}',
           docs: 'docs/**/*.md',
           keys: {
