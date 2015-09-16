@@ -1,5 +1,7 @@
 var browserify = require('browserify'),
-    babelify = require('babelify');
+    source = require('vinyl-source-stream'),
+    babelify = require('babelify'),
+    flatten = require('gulp-flatten');
 
 module.exports = function (gulp, plugins) {
   return function () {
