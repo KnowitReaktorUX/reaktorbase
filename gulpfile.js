@@ -78,5 +78,5 @@ gulp.task('setup', require('./config/tasks/setup')(gulp, plugins));
 gulp.task('templates', require('./config/tasks/templates')(gulp, plugins));
 
 gulp.task('serve', function () {
-    gulp.watch(['app/**/*.js', '*.html', 'app/**/*.hbs', 'app/**/*.scss'], ['build']);
+    gulp.watch(['app/**/*.js', '*.html', 'app/**/*.html', 'app/**/*.scss'], ['build']);
 });
