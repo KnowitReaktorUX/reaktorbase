@@ -6,11 +6,9 @@ cd seed-project
 bower update
 npm install
 gulp develop
-
-
 ```
 
-# Kodexempel
+# Code
 ## HTML
 HTML filerna (partials) byggs ihop till sidor med hjälp av Fabricator och Gulp,
 där man även kan ta markdown och handlebars till hjälp.
@@ -18,13 +16,13 @@ Vissa handlebars-helpers finns: dummytext(lipsum, antal ord) samt repetera html(
 
 Denna partial bör heta module-example.html
 ```html
-<div class="module">
-  <div class="module module-example">
+<section class="module">
+  <div class="module-example">
     {{#times 2}}
-    <h3>{{lipsum 10}}</h3>
+    <span>{{lipsum 10}}</span>
     {{/times}}  
   </div>  
-</div>
+</section>
 ```
 
 och kan hämtas in på en sida genom
