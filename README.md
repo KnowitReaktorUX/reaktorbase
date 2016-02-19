@@ -16,12 +16,10 @@ Vissa handlebars-helpers finns: dummytext(lipsum, antal ord) samt repetera html(
 
 Denna partial bör heta module-example.html
 ```html
-<section class="module">
-  <div class="module-example">
-    {{#times 2}}
-    <span>{{lipsum 10}}</span>
-    {{/times}}  
-  </div>  
+<section class="module module-example">
+  {{#times 2}}
+  <span>{{lipsum 10}}</span>
+  {{/times}}   
 </section>
 ```
 
