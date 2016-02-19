@@ -1,6 +1,4 @@
-# Seed project installation
-
-Scaffold for frontend projects
+# Getting started
 
 ```bash
 git clone https://github.com/thecyclingfarmer/seed-project.git
@@ -11,19 +9,6 @@ gulp develop
 
 
 ```
-
-What do we need:
-- [ ] What is is this? and why?
-  - [ ] how does it work
-  - [ ] leverabler & ansvar, ägande
-  - [ ] pros & cons
-  - [ ] things that isnt implemented yet, test
-  - [ ] ideas for the future
-- [ ] get started
-  - [ ] install: OSX
-  - [ ] install: WIN
-- mapp & filstruktur
-- Code standards, layout ideas, tankesätt
 
 # Kodexempel
 ## HTML
@@ -79,36 +64,6 @@ modify config/siteconfig.json
 run gulp.
 
 
---- INSTALL: OSX ---
-...
-
----INSTALL: WIN ---
-...
-
-# Frontendprojektet
-
-## Installation
-### OSX
-i ett terminalfönster, kolla först att du har node installerat.
-
-```bash
-node -v
-svar: v.0.12.0 <- får du ett svar som detta så kan du gå vidare, annars behöver du installera node.
-```
-sen behöver du se till att git, bower & gulp är installerat,
-```bash
-git --version
-svar: git version 2.5.4 (Apple Git-61)
-
-bower -v
-svar: 1.7.2
-
-gulp -v
-svar: CLI version 3.9.0
-      Local version 3.9.0
-```
-### Windows
-
 ## Varför?
 Därför
 
@@ -157,29 +112,3 @@ Sidtyperna är till för att samla moduler och komponenter, kan även fungera so
 
 ### Areas
 Dessa är en grov uppdelning av layouten, såsom site: header & footer.
-
-
-
-## Buildtools
-  Gulp
-
-
-  Structure:
-  - Start
-  - ...
-  - - Divisions
-  - - - Programs
-  - Statistics...
-
-  TODO:
-  Install foundation
-  Set up index.html for foundation
-  Config files for tasks
-  Assemble needs to fetch partials
-
-
-  Open another terminal to run tests
-
-  ```bash
-  gulp test
-  ```
