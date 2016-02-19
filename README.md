@@ -67,11 +67,6 @@ run gulp.
 ## Varför?
 Därför
 
-# Ansvar och leverabler
-* HTML mockups, mallar och exempel som kan fungera som referens till vyer i webbprojektet.
-* CSS, genererade från sass samt modifierade så de kan användas as-is (minifierade, prefixade, etc...)
-* JS, "buntade"/"bundlade" filer som på samma sätt som css filerna ska kunna användas as-is.
-* Bilder, Fonter,-- Ansvar och leverabler --
 
 ## Structure
 * Framework
