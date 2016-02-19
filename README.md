@@ -43,6 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta itaque architect
 }
 ```
 ## JS
+https://github.com/airbnb/javascript
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius asperiores, non. Mollitia reprehenderit sit laudantium dolore sunt distinctio aliquid magnam, voluptatem. Nisi sint voluptate quos officia repudiandae illo, porro aspernatur.
 * commonjs
 * import, export / modules
@@ -54,14 +55,6 @@ var foo = bar;
 ```
 
 
--- DEPENDENCIES --
-nodejs - 0.12.7
-bower
-git
-gulp
-
-modify config/siteconfig.json
-run gulp.
 
 
 ## Varför?
