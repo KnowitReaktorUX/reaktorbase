@@ -1,3 +1,17 @@
+# Seed project installation
+
+Scaffold for frontend projects
+
+```bash
+git clone https://github.com/thecyclingfarmer/seed-project.git
+cd seed-project
+bower update
+npm install
+gulp develop
+
+
+```
+
 What do we need:
 - [ ] What is is this? and why?
   - [ ] how does it work
@@ -70,23 +84,6 @@ run gulp.
 
 ---INSTALL: WIN ---
 ...
-
---- GIT TF ---
-git tf clone http://vsts01.knowit.se:8080/tfs/KNOWIT $/SE_STH_REAKTOR_REMEMBER/Main/Remember/Remember.Frontend/
-- siteconfig.json --locally
-  - git update-index --assume-unchanged FILE_NAME
-  - git update-index --no-assume-unchanged FILE_NAME
-
--- IMAGE SIZES --
-21:9:
-  - XL - 1867*800 (HERO)
-  - L  - 1440*617 (PAGE TOP)(503)
-  - M  - 860*369  (SLIDESHOW)
-  - S  - 640*274
-7:4:
-  - S - 640*366 (MULTI COL)
-3:2:
-  - S - 640*427 (ONE COL)
 
 # Frontendprojektet
 
@@ -166,22 +163,6 @@ Dessa är en grov uppdelning av layouten, såsom site: header & footer.
 ## Buildtools
   Gulp
 
-
-  # Seed project
-
-  A seed project..... TBD
-
-  ```bash
-  git clone https://github.com/thecyclingfarmer/seed-project.git
-  cd seed-project
-  bower update
-  npm install
-  gulp develop
-
-
-
-
-  ```
 
   Structure:
   - Start
