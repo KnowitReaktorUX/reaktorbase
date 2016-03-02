@@ -51,12 +51,6 @@ var foo = bar;
 ```
 
 
-
-
-## Varför?
-Därför
-
-
 ## Structure
 * Framework
   * Areas
