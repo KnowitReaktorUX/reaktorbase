@@ -1,0 +1,2 @@
+--require mocha-babel
+--require test/utils/dom.js
