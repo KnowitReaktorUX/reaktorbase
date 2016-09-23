@@ -1,9 +1,0 @@
-{
-  "name": "knowit-seed-project",
-  "version": "0.0.1",
-  "private": "true",
-  "dependencies": {
-    "knowit-ninja": "https://github.com/thecyclingfarmer/kit-ninja.git",
-    "foundation": "~5.5.2"
-  }
-}
