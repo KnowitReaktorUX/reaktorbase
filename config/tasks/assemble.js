@@ -44,7 +44,7 @@ module.exports = function (gulp, plugins) {
               views: 'views',
               docs: 'docs'
           },
-          helpers: require('../../bower_components/knowit-ninja/helpers')(handlebars),
+          helpers: require('../../node_modules/knit-ninja/helpers')(handlebars),
           logErrors: false,
           onError: function(error) {
             console.log(error);
