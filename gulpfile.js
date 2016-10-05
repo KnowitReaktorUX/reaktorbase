@@ -40,3 +40,6 @@ gulp.task('templates', require('./config/tasks/templates')(gulp, plugins));
 
 //SERVE
 gulp.task('serve', require('./config/tasks/serve')(gulp, plugins));
+
+//Accessible
+gulp.task('accessible', require('./config/tasks/accessibility')(gulp, plugins));
