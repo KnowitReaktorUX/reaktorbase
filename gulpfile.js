@@ -43,3 +43,9 @@ gulp.task('serve', require('./config/tasks/serve')(gulp, plugins));
 
 //Accessible
 gulp.task('accessible', require('./config/tasks/accessibility')(gulp, plugins));
+
+// Cache bust
+gulp.task('cachebust', require('./config/tasks/cachebust')(gulp, plugins));
+gulp.task('cachebustjs', require('./config/tasks/cachebustjs')(gulp, plugins));
+gulp.task('cachebustcss', require('./config/tasks/cachebustcss')(gulp, plugins));
+gulp.task('cachebustclean', require('./config/tasks/cachebustclean')(gulp, plugins));
