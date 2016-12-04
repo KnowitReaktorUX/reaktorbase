@@ -16,3 +16,11 @@ MOCK_COMPONENTS=app/blocks/**/*.html,app/components/**/*.html,app/framework/area
 MOCK_IMAGES=app/framework/images/
 MOCK_FONTS=app/framework/fonts/
 ```
+
+# eslint
+
+Default config is "extends": "airbnb" with support for React and JSX, see .eslintrc.js
+If your are not using React you can change to "extends": "airbnb-base"
+https://www.npmjs.com/package/eslint-config-airbnb
+https://www.npmjs.com/package/eslint-config-airbnb-base
+https://github.com/airbnb/javascript
