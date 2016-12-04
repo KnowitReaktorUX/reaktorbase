@@ -29,6 +29,7 @@
     "del": "^1.2.1",
     "ejs": "^2.3.3",
     "eslint": "^1.2.1",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^3.2.3",
     "fabricator-assemble": "^1.1.9",
     "gulp": "^3.9.1",
