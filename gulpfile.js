@@ -26,6 +26,9 @@ gulp.task('mocha', require('./config/tasks/mocha')(gulp, plugins));
 //JS: TEST
 gulp.task('test', require('./config/tasks/test')(gulp, plugins));
 
+// JS: ESLINT
+gulp.task('eslint', require('./config/tasks/eslint')(gulp, plugins));
+
 //JS: BUILD
 gulp.task('js', require('./config/tasks/js')(gulp, plugins));
 

@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins) {
     gulp.task('build', function (cb) {
         runSequence(
             'clean',
-            ['js', 'sass', 'templates', 'assemble', 'copy'],
+            ['eslint', 'js', 'sass', 'templates', 'assemble', 'copy'],
             cb
         );
     });

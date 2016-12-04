@@ -19,7 +19,7 @@ MOCK_FONTS=app/framework/fonts/
 
 # eslint
 
-Default config is "extends": "airbnb" with support for React and JSX, see .eslintrc.js
+Default config is "extends": "airbnb" with support for React and JSX, see .eslintrc
 If your are not using React you can change to "extends": "airbnb-base"
 https://www.npmjs.com/package/eslint-config-airbnb
 https://www.npmjs.com/package/eslint-config-airbnb-base
