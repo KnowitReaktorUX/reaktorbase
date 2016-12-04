@@ -14,7 +14,6 @@
       "react/jsx-filename-extension": 0,
       "no-unused-vars": 0,
       "object-curly-spacing": 0,
-      "spaced-comment": 0,
       "no-var": 0,
       "import/no-extraneous-dependencies": 0,
       "import/no-unresolved": 0,

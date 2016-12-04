@@ -1,4 +1,4 @@
-//https://github.com/akiran/react-slick
+// https://github.com/akiran/react-slick
 var React = require('react');
 var Slider = require('react-slick');
 
