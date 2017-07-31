@@ -45,7 +45,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 100% !default;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -61,8 +61,8 @@ $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: #373A39;
+$body-font-family: Legato, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -81,11 +81,12 @@ $print-transparent-backgrounds: true;
 $breakpoints: (
   small: 0,
   medium: 640px,
+  portraitIpad: 1000px,
   large: 1024px,
-  xlarge: 1200px,
+  xlarge: 1250px,
   xxlarge: 1440px,
 );
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium portraitIpad large xlarge xxlarge);
 
 // 3. The Grid
 // -----------
@@ -93,8 +94,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+  small: 40px,
+  large: 30px,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
@@ -106,22 +107,22 @@ $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-sizes: (
+$header-styles: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 40),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
   ),
 );
 $header-color: inherit;
@@ -213,10 +214,13 @@ $accordionmenu-arrow-color: $primary-color;
 // --------
 
 $badge-background: $primary-color;
-$badge-color: foreground($badge-background);
+$badge-color: $white;
+$badge-color-alt: $black;
+$badge-palette: $foundation-palette;
 $badge-padding: 0.3em;
 $badge-minwidth: 2.1em;
 $badge-font-size: 0.6rem;
+
 
 // 10. Breadcrumbs
 // ---------------
@@ -361,7 +365,9 @@ $input-radius: $global-radius;
 // ---------
 
 $label-background: $primary-color;
-$label-color: foreground($label-background);
+$label-color: $white;
+$label-color-alt: $black;
+$label-palette: $foundation-palette;
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;
