@@ -1,3 +1,10 @@
+# Reaktor Base Extra
+
+## Contains
+- Foundation
+- jQuery
+- React
+
 ## Get started
 
 ##### 1. Install node - https://nodejs.org/download/release/latest/
