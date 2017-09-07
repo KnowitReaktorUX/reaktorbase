@@ -1,4 +1,4 @@
-# Pure Reaktor Base
+# Reaktor Base
 
 ## Get started
 
