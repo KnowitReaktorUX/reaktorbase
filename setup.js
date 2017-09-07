@@ -34,24 +34,6 @@ var git_installed = function (fn) {
       });
     };
 
-//bower - requires: node, npm & git
-var bower_installed = function (fn) {
-      exec('bower --version', function(err, out, stderr) {
-        fn((err != null) ? false : true, out.toString().trim());
-      });
-    },
-    bower_install = function (fn) {
-      exec('npm install -g bower', function(err, out, stderr) {
-        fn((err != null) ? false : true);
-      });
-    },
-    bower_update = function (fn) {
-      exec('bower update', function(err, out, stderr) {
-        fn((err != null) ? false : true);
-        err == null ? setup.step_4() : err; //if no error occured, proceed with step 4.
-      });
-    };
-
 //gulp
 var gulp_installed = function (fn) {
       exec('gulp -v', function(err, out, stderr) {
@@ -67,9 +49,6 @@ var setup = function () {
       npm_fail_msg = 'Unable to install node packages, try to install them manually (npm install). then re-run this script.',
       git_success_msg = 'Git Installed',
       git_fail_msg = 'Unable to find git, needs to be installed manually, Git available at: http://git-scm.com/downloads',
-      bower_success_msg = 'Bower Installed',
-      bower_empty_msg = 'Unable to find bower, will try to install',
-      bower_fail_msg = 'Unable to install bower, needs to be installed manually (npm install -g bower)',
       gulp_success_msg = 'Gulp Installed',
       gulp_empty_msg = '',
       gulp_fail_msg = '';
@@ -99,25 +78,8 @@ var setup = function () {
       };
 
   /*  STEP 3:
-      check if bower is installed.
-      if not install bower, and then run bower update. */
-      var step_3 = function () {
-        section_divider('bower');
-        bower_installed( function (status, version) {
-          if (status) status_message(bower_success_msg + ', current version: ' + version, false);
-          else {
-            status_message(bower_empty_msg, false);
-            bower_install( function (status) {
-              if (status) status_message(bower_success_msg, false);
-              else status_message(bower_fail_msg, true);
-            });
-          }
-        });
-      };
-
-  /*  STEP 4:
       check if gulp is installed, otherwise install, and build the project (gulp develop) */
-      var step_4 = function () {
+      var step_3 = function () {
         section_divider('gulp');
         gulp_installed( function (status) {
           if (status) status_message(gulp_success_msg);
@@ -125,12 +87,9 @@ var setup = function () {
         });
       };
 
-//!!!!!!!!!!! BOWER UPDATE !!!!!!!!!!!
-
       return {
         step_1: step_1,
         step_2: step_2,
-        step_3: step_3,
-        step_4: step_4
+        step_3: step_3
       };
 }();

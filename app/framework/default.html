@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   	<meta charset="UTF-8">
-  	<title>seed project : {{page-name}}</title>
+  	<title>Reaktor Base: {{page-name}}</title>
   	<link rel="stylesheet" href="{{siteconfig.csspath}}" />
 </head>
 <body class="page {{page-name}}">
+  {{>c-header}}
   {% body %}
-
+  {{>c-footer}}
   <script src="{{siteconfig.scriptpath}}"></script>
 </body>
 </html>

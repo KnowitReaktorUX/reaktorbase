@@ -1,9 +1,4 @@
-# Reaktor Base Extra
-
-## Contains
-- Foundation
-- jQuery
-- React
+# Pure Reaktor Base
 
 ## Get started
 
@@ -35,10 +30,7 @@ gulp -v
 
 ##### 4. Clone project
 ```bash
-Branch master:
 git clone https://github.com/KnowitReaktorUX/reaktorbase.git
-Branch pure-reaktor-base:
-git clone -b pure-reaktor-base https://github.com/KnowitReaktorUX/reaktorbase.git
 ```
 
 ##### 5. Create an .env file in the root with this content

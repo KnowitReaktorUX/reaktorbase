@@ -1,4 +1,3 @@
-import React from 'react';
-import CheckboxWithLabel from '../components/component-checkboxwithlabel/component.checkboxwithlabel.react';
+import cExample from '../components/c-example/c-example';
 
-React.render(<CheckboxWithLabel labelOn="On" labelOff="Off" />, document.getElementById('view'));
+cExample.init();

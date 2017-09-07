@@ -1,10 +1,9 @@
-var access = require('gulp-accessibility');
-var rename = require('gulp-rename');
+const access = require('gulp-accessibility');
+const rename = require('gulp-rename');
 
 module.exports = function (gulp, plugins) {
-  return function () {
-    gulp.task('accessible', function () {
-      return gulp.src(process.env.BUILD_PATH + 'mockups/**/*.html')
+    return gulp.task('accessibility', () => {
+      gulp.src(process.env.BUILD_PATH + 'mockups/**/*.html')
       .pipe(access({
         force: true,
       }))
@@ -16,6 +15,5 @@ module.exports = function (gulp, plugins) {
         extname: '.txt',
       }))
       .pipe(gulp.dest(process.env.BUILD_PATH + 'mockups/reports'));
-    });
-  };
+  });
 };
