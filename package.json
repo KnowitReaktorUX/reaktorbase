@@ -43,7 +43,6 @@
     "gulp-util": "^3.0.7",
     "gulp-wcag-accessibility": "0.0.1",
     "handlebars": "^4.0.2",
-    "knit-ninja": "git+https://github.com/KnowitReaktorUX/kit-ninja.git",
     "mocha": "^3.2.0 ",
     "run-sequence": "^1.1.2",
     "vinyl-buffer": "^1.0.0",

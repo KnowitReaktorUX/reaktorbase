@@ -128,9 +128,35 @@ The HTML files (partials) are built together to pages with fabricator-assemble. 
 </section>
 ```
 
-###### and you place it in a file like this
+###### and you place it in a file like this:
 ```html
 {{>c-example}}
+```
+
+###### More handlebar helpers:
+```html
+{{#times 1}}
+{{/times}}
+
+{{lipsum 1}}
+
+{{lipsumtitle}}
+
+{{cat}}
+
+{{claude}}
+
+{{addClasses "page-article" page-name}}
+
+{{#if_eq page-name 'page-local-contact'}}
+{{else}}
+{{/if_eq}}
+
+{{{showSubmenus has-submenu}}}
+
+{{#ifCond var1 '==' var2}}, {{#ifCond var1 '!=' var2}} etc.
+
+{{>myPartial id=(concat "foo" myVar myOtherVar)}}
 ```
 
 #### Unwanted extra margin
