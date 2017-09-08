@@ -106,7 +106,15 @@ https://github.com/airbnb/javascript
 ### Tips & tricks
 
 #### Accessibility
-There's a task that generates accessibility reports for each mockup in the mockups folder. If you want to view the reports directly in the browser, you have to start the develop task afterwards manually.
+There's a task that generates accessibility reports, for each mockup, in the build folder. If you want to view the reports directly in the browser, you have to start the develop task manually afterwards. You can configure the accessibility.js if you want. You can change the level – WCAG2A, WCAG2AA or WCAG2AAA. Default it's set to report notices, warnings and errors, but you can choose to turn off any of them by typing for example: notice: false.
+###### You can also make a report directly on a live web site by adding forceUrls and urls. If you have this on you cannot get reports on your mockups at the same time.
+```
+forceUrls: true,
+urls: [
+    'http://www.knowit.se'
+]
+```
+
 
 #### HTML
 The HTML files (partials) are built together to pages with fabricator-assemble. There are a number of handlebar helpers, for example: dummytext {{lipsum 10}} and repeating html {{#times 2}}. More info here -  https://www.npmjs.com/package/fabricator-assemble
