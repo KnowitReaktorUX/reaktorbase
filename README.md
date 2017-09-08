@@ -2,11 +2,11 @@
 
 ## Get started
 
-##### 1. Install node - https://nodejs.org/download/release/latest/
+### 1. Install node - https://nodejs.org/download/release/latest/
 
-##### 2. Install git - https://git-scm.com/download/win
+### 2. Install git - https://git-scm.com/download/win
 
-##### 3. Open the command prompt
+### 3. Open the command prompt
 
 Verify that node was installed by specifying:
 ```
@@ -28,12 +28,12 @@ Verify that gulp was installed by specifying:
 gulp -v
 ```
 
-##### 4. Clone project
+### 4. Clone project
 ```bash
 git clone https://github.com/KnowitReaktorUX/reaktorbase.git
 ```
 
-##### 5. Create an .env file in the root with this content
+### 5. Create an .env file in the root with this content
 ```
 BUILD_PATH=build/
 MOCK_LAYOUT=app/framework/*
@@ -54,7 +54,7 @@ MOCK_IMAGES=app/framework/images/
 MOCK_FONTS=app/framework/fonts/
 ```
 
-##### 6. In the command prompt
+### 6. In the command prompt
 
 Go to the frontend folder by entering the path, for example:
 ```
@@ -66,7 +66,7 @@ Enter this to install all node modules:
 npm install
 ```
 
-##### 7. In Visual Studio
+### 7. In Visual Studio
 
 Go to Tools > Options > Projects and solutions > External web tools and move up the $(PATH) so it becomes in this order:
 ```
@@ -78,32 +78,29 @@ $(DevEnvDir)\Extensions\Microsoft\Web Tools\External\git
 
 Then go to the Task Runner Explorer and right click first on the setup task and choose Bindings > Project open, and then do the same with the develop task.
 
-### Restart Visual Studio
+##### Restart Visual Studio
 
 Go to the Task Runner Explorer and make sure that the setup and develop task is running.
 
 ###### NOTE! If you have a site in the IIS that's also at port 8080 - change the port in the IIS because else it will crash. If you have several projects started at the same time with the gulp task running you need to change the port in the server.js.
 
 
-##### 8. Other
+### 8. Other
 
-### Installing new node modules
+#### Installing new node modules
 
 Remember to add --save-dev when you install a new node module. Else it will only be installed locally on your computer. For example:
 ```
 npm install jquery --save-dev
 ```
 
-### Eslint
+#### Eslint
 
 Default config is "extends": "airbnb" with support for React and JSX, see .eslintrc
 If your are not using React you can change to "extends": "airbnb-base"
 https://www.npmjs.com/package/eslint-config-airbnb  
 https://www.npmjs.com/package/eslint-config-airbnb-base  
 https://github.com/airbnb/javascript
-
-
-### Tips & tricks
 
 #### Accessibility
 There's a task that generates accessibility reports, for each mockup, in the build folder. If you want to view the reports directly in the browser, you have to start the develop task manually afterwards. You can configure the accessibility.js if you want. You can change the level – WCAG2A, WCAG2AA or WCAG2AAA. Default it's set to report notices, warnings and errors, but you can choose to turn off any of them by typing for example: notice: false.
@@ -115,6 +112,7 @@ urls: [
 ]
 ```
 
+### Tips & tricks
 
 #### HTML
 The HTML files (partials) are built together to pages with fabricator-assemble. There are a number of handlebar helpers, for example: dummytext {{lipsum 10}} and repeating html {{#times 2}}. More info here -  https://www.npmjs.com/package/fabricator-assemble
