@@ -84,17 +84,16 @@ Go to the Task Runner Explorer and make sure that the setup and develop task is 
 
 ###### NOTE! If you have a site in the IIS that's also at port 8080 - change the port in the IIS because else it will crash. If you have several projects started at the same time with the gulp task running you need to change the port in the server.js.
 
+## Tips & tricks
 
-### 8. Other
-
-#### Installing new node modules
+### Installing new node modules
 
 Remember to add --save-dev when you install a new node module. Else it will only be installed locally on your computer. For example:
 ```
 npm install jquery --save-dev
 ```
 
-#### Eslint
+### Eslint
 
 Default config is "extends": "airbnb" with support for React and JSX, see .eslintrc
 If your are not using React you can change to "extends": "airbnb-base"
@@ -102,7 +101,7 @@ https://www.npmjs.com/package/eslint-config-airbnb
 https://www.npmjs.com/package/eslint-config-airbnb-base  
 https://github.com/airbnb/javascript
 
-#### Accessibility
+### Accessibility
 There's a task that generates accessibility reports, for each mockup, in the build folder. If you want to view the reports directly in the browser, you have to start the develop task manually afterwards. You can configure the accessibility.js if you want. You can change the level – WCAG2A, WCAG2AA or WCAG2AAA. Default it's set to report notices, warnings and errors, but you can choose to turn off any of them by typing for example: notice: false.
 ###### You can also make a report directly on a live web site by adding forceUrls and urls. If you have this on you cannot get reports on your mockups at the same time.
 ```
@@ -112,15 +111,13 @@ urls: [
 ]
 ```
 
-#### Manifest file
+### Manifest file
 Manifest file is used to add id to the main css and script files so that they are not cached when making a deploy. It also creates a rev-manifest.json in the build folder so that backend can get the updated file name with id number. Make sure that backend fixes so that they can read the rev-manifest.json when you enable this, otherwise you will get longer loading times. To activate this feature you just uncomment the line below in the build.js file.
 ```
 .then(manifestfile);
 ```
 
-### 9. Tips & tricks
-
-#### HTML
+### HTML
 The HTML files (partials) are built together to pages with fabricator-assemble. There are a number of handlebar helpers, for example: dummytext {{lipsum 10}} and repeating html {{#times 2}}. More info here -  https://www.npmjs.com/package/fabricator-assemble
 
 ###### This partial is named c-example.html
@@ -163,10 +160,10 @@ The HTML files (partials) are built together to pages with fabricator-assemble. 
 {{>myPartial id=(concat "foo" myVar myOtherVar)}}
 ```
 
-#### Unwanted extra margin
+### Unwanted extra margin
 Sometimes you can get an margin above a partial that is embedded in another html file. To get rid of this, you must save the file in a special way. First make a small change in the partial and then in Visual Studio select File > Advanced Save Options and choose Unicode (UTF-8 without signature).
 
-#### SASS
+### SASS
 .scss files are created with underscore first, otherwise a new separate .css will be generated. An example of when you may want to do it is for the Episerver html editor - htmlEditor.css.
 
 ###### BEM
