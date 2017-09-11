@@ -19,6 +19,6 @@ module.exports = function (gulp, plugins) {
                   .then(sass)
                   .then(assemble)
                   .then(copy)
-                  //then(manifestfile);
+                  //.then(manifestfile);
   });
 };
