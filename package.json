@@ -35,7 +35,7 @@
     "gulp-if": "^2.0.2",
     "gulp-load-plugins": "^1.4.0",
     "gulp-rename": "^1.2.2",
-    "gulp-rev": "^7.1.2",
+    "gulp-rev-all": "^0.9.7",
     "gulp-run": "^1.6.10",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.9.1",

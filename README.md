@@ -112,7 +112,13 @@ urls: [
 ]
 ```
 
-### Tips & tricks
+#### Manifest file
+Manifest file is used to add id to the main css and script files so that they are not cached when making a deploy. It also creates a rev-manifest.json in the build folder so that backend can get the updated file name with id number. Make sure that backend fixes so that they can read the rev-manifest.json when you enable this, otherwise you will get longer loading times. To activate this feature you just uncomment the line below in the build.js file.
+```
+.then(manifestfile);
+```
+
+### 9. Tips & tricks
 
 #### HTML
 The HTML files (partials) are built together to pages with fabricator-assemble. There are a number of handlebar helpers, for example: dummytext {{lipsum 10}} and repeating html {{#times 2}}. More info here -  https://www.npmjs.com/package/fabricator-assemble

@@ -6,6 +6,8 @@ const assemble = require('../tools/assemble');
 const copy = require('../tools/copy');
 const server = require('../tools/server');
 const util = require('gulp-util');
+const runSequence = require('run-sequence');
+const manifestfile = require('../tools/manifestfile');
 
 module.exports = function (gulp, plugins) {
   return gulp.task('build', () => {
@@ -16,6 +18,7 @@ module.exports = function (gulp, plugins) {
                   .then(js)
                   .then(sass)
                   .then(assemble)
-                  .then(copy);
+                  .then(copy)
+                  //then(manifestfile);
   });
 };
