@@ -38,7 +38,7 @@ git clone https://github.com/KnowitReaktorUX/reaktorbase.git
 BUILD_PATH=build/
 MOCK_LAYOUT=app/framework/*
 MOCK_PAGES=app/pages/**/*.html
-MOCK_COMPONENTS=app/blocks/**/*.html,app/components/**/*.html,app/framework/components/**/*.html
+MOCK_COMPONENTS=app/components/**/*.html,app/framework/components/**/*.html
 MOCK_IMAGES=app/framework/images/
 MOCK_FONTS=app/framework/fonts/
 ```
