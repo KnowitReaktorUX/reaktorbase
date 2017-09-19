@@ -1,13 +1,14 @@
 const run = require('gulp-run');
 
 module.exports = function (gulp, plugins) {
-  return () => {
-    const npmComplete = false;
+  return gulp.task('setup', (cb) => {
+    var npmComplete = false;
 
     //complete
     var complete = function () {
       if (npmComplete) {
         run('asciify "Complete" -f larry3d').exec();
+        cb();
       }
     };
 
@@ -17,5 +18,5 @@ module.exports = function (gulp, plugins) {
       npmComplete = true;
       complete();
     });
-  };
+  });
 };

@@ -81,13 +81,12 @@ $(DevEnvDir)\Extensions\Microsoft\Web Tools\External
 $(DevEnvDir)\Extensions\Microsoft\Web Tools\External\git
 ```
 
-Then go to the Task Runner Explorer and right click first on the setup task and choose Bindings > Project open, and then do the same with the develop task.
-
 ##### Restart Visual Studio
 
 Go to the Task Runner Explorer and make sure that the setup and develop task is running.
 
 ###### NOTE! If you have a site in the IIS that's also at port 8080 - change the port in the IIS because else it will crash. If you have several projects started at the same time with the gulp task running you need to change the port in the server.js.
+
 
 ## Tips & tricks
 
