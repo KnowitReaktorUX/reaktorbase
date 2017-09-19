@@ -34,6 +34,11 @@ git clone https://github.com/KnowitReaktorUX/reaktorbase.git
 ```
 
 ### 5. Create an .env file in the root with this content
+Go to the newly created reaktorbase folder and write this in the command prompt:
+```
+echo > .env
+```
+Copy this into the new file:
 ```
 BUILD_PATH=build/
 MOCK_LAYOUT=app/framework/*
