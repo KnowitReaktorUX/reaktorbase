@@ -39,7 +39,7 @@ module.exports = () => {
                   views: 'views',
                   docs: 'docs',
               },
-              helpers: require('../../node_modules/knit-ninja/helpers')(handlebars),
+              helpers: require('../helpers')(handlebars),
               logErrors: false,
               onError: (error) => {
                   console.log(error);
