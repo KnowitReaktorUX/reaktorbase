@@ -1,3 +1,8 @@
 .c-example {
   border: solid 4px black;
+
+  &--red-border {
+    border-color: red;
+    margin: 30px 0;
+  }
 }
