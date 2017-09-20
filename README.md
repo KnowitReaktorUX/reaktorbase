@@ -34,7 +34,7 @@ git clone https://github.com/KnowitReaktorUX/reaktorbase.git
 ```
 
 ### 5. Create an .env file in the root with this content
-Go to the newly created reaktorbase folder and write this in the command prompt:
+Go to the newly created reaktorbase folder (the root folder) and write this in the command prompt:
 ```
 echo > .env
 ```
@@ -60,15 +60,16 @@ MOCK_FONTS=app/framework/fonts/
 ```
 
 ### 6. In the command prompt
+Stay in the root folder and enter this to install all node modules:
 
-Go to the frontend folder by entering the path, for example:
-```
-cd C:\Episerver\SE_STH_EXP_INERA\Dev\Frontend
-```
-
-Enter this to install all node modules:
 ```
 npm install
+```
+
+And to start enter:
+
+```
+gulp develop
 ```
 
 ### 7. In Visual Studio
@@ -146,18 +147,6 @@ The HTML files (partials) are built together to pages with fabricator-assemble. 
 {{lipsum 1}}
 
 {{lipsumtitle}}
-
-{{cat}}
-
-{{claude}}
-
-{{addClasses "page-article" page-name}}
-
-{{#if_eq page-name 'page-local-contact'}}
-{{else}}
-{{/if_eq}}
-
-{{{showSubmenus has-submenu}}}
 
 {{#ifCond var1 '==' var2}}, {{#ifCond var1 '!=' var2}} etc.
 
