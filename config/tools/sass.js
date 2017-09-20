@@ -13,7 +13,7 @@ module.exports = () => {
       gulp.src('app/**/*.scss')
       .pipe(gulpif(process.env.NODE_ENV === 'development', sourcemaps.init()))
       .pipe(sass({
-        includePaths: ['node_modules/foundation-sites/scss'],
+        //includePaths: ['node_modules/foundation-sites/scss'],
         outputStyle: process.env.NODE_ENV === 'development' ? 'expanded' : 'compressed',
       }).on('error', sass.logError))
       .pipe(gulpif(process.env.NODE_ENV === 'development', sourcemaps.write()))
