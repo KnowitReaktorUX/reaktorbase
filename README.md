@@ -117,9 +117,13 @@ urls: [
 ```
 
 ### Manifest file
-Manifest file is used to add id to the main css and script files so that they are not cached when making a deploy. It also creates a rev-manifest.json in the build folder so that backend can get the updated file name with id number. Make sure that backend fixes so that they can read the rev-manifest.json when you enable this, otherwise you will get longer loading times. To activate this feature you just uncomment the line below in the build.js file.
+Manifest file is used to add id to the main css and script files so that they are not cached when making a deploy. It also creates a rev-manifest.json in the build folder so that backend can get the updated file name with id number. Make sure that backend fixes so that they can read the rev-manifest.json when you enable this, otherwise you will get longer loading times. To activate this feature you just uncomment the code below in the build.js file.
 ```
-.then(manifestfile);
+.then(() => {
+  runSequence(
+    'manifestfile'
+  );
+});
 ```
 
 ### HTML
