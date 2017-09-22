@@ -18,7 +18,7 @@ module.exports = function (gulp, plugins) {
                   .then(eslint)
                   .then(js)
                   .then(sass)
-                  .then(assemble)
+                  .then(process.env.NODE_ENV == 'production' ? null : assemble)
                   .then(copy)
                   /*.then(() => {
                     runSequence(
