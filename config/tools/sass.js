@@ -4,6 +4,7 @@ const flatten = require('gulp-flatten');
 const util = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
+const server = require('../tools/server');
 
 require('dotenv').config();
 
@@ -21,6 +22,7 @@ module.exports = () => {
       .pipe(gulp.dest(process.env.BUILD_PATH + 'stylesheets'))
       .on('end', () => {
         util.log(util.colors.green('Finished compiling CSS... 👍'));
+        server.reload();
         resolve();
       })
       .on('error', reject);

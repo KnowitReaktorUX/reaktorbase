@@ -6,7 +6,7 @@ module.exports = (path) => {
         util.log(util.colors.gray('Starting ') + util.colors.cyan('clean'));
         del(path, { force: true }).then(function (paths) {
             //console.log("Deleted files and folders: \n", paths.join('\n'));
-            util.log(util.colors.gray('Finished ') + util.colors.cyan('clean... '));
+            util.log(util.colors.gray('Finished ') + util.colors.cyan(`cleaning ${path}`));
             resolve();
         }, function (reason) {
             //console.log("Failed to delete files " + reason);
