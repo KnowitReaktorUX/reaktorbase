@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
+const server = require('../tools/server');
 const source = require('vinyl-source-stream');
 const babelify = require('babelify');
 const flatten = require('gulp-flatten');
@@ -27,6 +28,7 @@ module.exports = () => {
     return bundler.bundle()
       .on('end', () => {
         util.log(util.colors.green('Finished bundling scripts... 👍'));
+        server.reload();
         resolve();
       })
       .on('error', (err) => {
@@ -44,7 +46,7 @@ module.exports = () => {
       .pipe(gulpif(process.env.NODE_ENV !== 'development', flatten()))
       .pipe(gulpif(process.env.NODE_ENV !== 'development', gulp.dest(process.env.BUILD_PATH + 'js')));
   };
-
+  
   const dev = (resolve) => {
     const bundler = watchify(build());
     bundler.on('log', util.log);

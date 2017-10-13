@@ -20,6 +20,7 @@ module.exports = function (gulp, plugins) {
                   .then(sass)
                   .then(process.env.NODE_ENV == 'production' ? null : assemble)
                   .then(copy)
+                  .then(server.reload)
                   /*.then(() => {
                     runSequence(
                       'manifestfile'

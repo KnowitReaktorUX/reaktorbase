@@ -1,13 +1,12 @@
-const connect = require('gulp-connect');
+const browserSync = require('browser-sync').create();
 require('dotenv').config();
 
-module.exports = function () {
-  return new Promise((resolve) => {
-    connect.server({
-      root: process.env.BUILD_PATH,
-      livereload: false,
-      port: 8080
-    });
-    resolve();
-  });
-};
+browserSync.init({
+  server: {
+      baseDir: process.env.BUILD_PATH,
+      directory: true      
+  },
+  notify: false
+});
+
+module.exports = browserSync;
