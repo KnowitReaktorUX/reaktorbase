@@ -12,12 +12,13 @@ module.exports = function (gulp, plugins) {
     util.log(util.colors.cyan(`Building html`));
     return clean([process.env.BUILD_PATH + 'mockups'])
       .then(process.env.NODE_ENV == 'production' ? null : assemble)
-      .then(copy)
-      /*.then(() => {
-        runSequence(
-          'manifestfile'
-        );
-      });*/
+      .then(copy);
+        /*.then(() => {
+        .then(() => {
+          runSequence(
+            'manifestfile'
+          );
+        });*/;
   });
   
 };
