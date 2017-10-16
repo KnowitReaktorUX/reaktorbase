@@ -5,9 +5,9 @@ module.exports = (gulp, plugins) => {
     process.env.NODE_ENV = 'development';
     
     runSequence(
-        'build-html',
-        'build-sass',
-        'build-js'
+      'build-sass',
+      'build-js',
+      'build-html'
     );
   });
 };

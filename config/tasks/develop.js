@@ -7,9 +7,9 @@ module.exports = function (gulp, plugins) {
     process.env.WATCH = 'watch';
 
     runSequence(
-        'build-html',
         'build-sass',
         'build-js',
+        'build-html',
         'watch'
     );
 
