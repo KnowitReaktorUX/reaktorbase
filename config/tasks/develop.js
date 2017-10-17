@@ -1,5 +1,5 @@
 const runSequence = require('run-sequence');
-const server = require('../tools/server');
+const { start } = require('../tools/server');
 
 module.exports = function (gulp, plugins) {
   return gulp.task('develop', () => {
@@ -10,10 +10,14 @@ module.exports = function (gulp, plugins) {
         'build-sass',
         'build-js',
         'build-html',
-        'watch'
+        'copy-assets',
+        'watch',
+        () => {
+          start();
+        }
     );
 
-    server.start();
+    
 
   });
 };

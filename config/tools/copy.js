@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 const flatten = require('gulp-flatten');
 const util = require('gulp-util');
+const {reload} = require('../tools/server');
 
 require('dotenv').config();
 
@@ -31,8 +32,9 @@ module.exports = () => {
   util.log(util.colors.green('Copying assets...'));
 
   return copyImages().then(copyFonts)
-                     .then(() => {
-                       util.log(util.colors.green('Finished copying assets... 👍'));
-                     });
+    .then(() => {
+      util.log(util.colors.green('Finished copying assets... 👍'));
+      reload();
+    });
 
 };

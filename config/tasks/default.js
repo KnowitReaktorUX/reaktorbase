@@ -7,7 +7,8 @@ module.exports = (gulp, plugins) => {
     runSequence(
       'build-sass',
       'build-js',
-      'build-html'
+      'build-html',
+      'copy-assets'
     );
   });
 };

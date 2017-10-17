@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
-const server = require('../tools/server');
+const { reload } = require('../tools/server');
 const source = require('vinyl-source-stream');
 const babelify = require('babelify');
 const flatten = require('gulp-flatten');
@@ -28,7 +28,7 @@ module.exports = () => {
     return bundler.bundle()
       .on('end', () => {
         util.log(util.colors.green('Finished bundling scripts... 👍'));
-        server.reload();
+        reload();
         resolve();
       })
       .on('error', (err) => {
