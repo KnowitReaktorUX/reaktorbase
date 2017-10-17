@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 const flatten = require('gulp-flatten');
 const util = require('gulp-util');
-const {reload} = require('../tools/server');
+const { reload } = require('../tools/server');
 
 require('dotenv').config();
 
