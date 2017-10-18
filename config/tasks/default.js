@@ -8,6 +8,7 @@ module.exports = (gulp, plugins) => {
       'build-sass',
       'build-js',
       'build-html',
+      //'manifestfile',
       'copy-assets'
     );
   });

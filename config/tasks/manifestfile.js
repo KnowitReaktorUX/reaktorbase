@@ -1,5 +1,6 @@
 const gulp = require("gulp");
 const RevAll = require('gulp-rev-all');
+const util = require('gulp-util');
 
 require('dotenv').config();
 module.exports = () => {
@@ -8,6 +9,7 @@ module.exports = () => {
         .pipe(RevAll.revision())
         .pipe(gulp.dest(process.env.BUILD_PATH))
         .pipe(RevAll.manifestFile())
-        .pipe(gulp.dest(process.env.BUILD_PATH));
+        .pipe(gulp.dest(process.env.BUILD_PATH))
+        .on('end', () => util.log(util.colors.green('Manifest completed... 👍')));
     });
 };

@@ -10,6 +10,7 @@ module.exports = function (gulp, plugins) {
         'build-sass',
         'build-js',
         'build-html',
+        // 'manifestfile',
         'copy-assets',
         'watch',
         () => {
