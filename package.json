@@ -37,7 +37,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-rev-all": "^0.9.7",
     "gulp-run": "^1.6.10",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
