@@ -7,11 +7,10 @@ module.exports = function (gulp, plugins) {
     process.env.WATCH = 'watch';
 
     runSequence(
-        'build',
+        'buildAll',
         'watch'
     );
 
     server();
-
   });
 };
