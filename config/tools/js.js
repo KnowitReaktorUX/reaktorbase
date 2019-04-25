@@ -3,7 +3,7 @@ const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const babelify = require('babelify');
 const flatten = require('gulp-flatten');
-const watchify   = require('watchify');
+const watchify = require('watchify');
 const util = require('gulp-util');
 const uglify = require('gulp-uglify');
 const buffer = require('vinyl-buffer');
@@ -68,5 +68,4 @@ module.exports = () => {
       prod(resolve);
     }
   });
-
 };

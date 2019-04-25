@@ -5,7 +5,7 @@ module.exports = (gulp, plugins) => {
     process.env.NODE_ENV = 'development';
     
     runSequence(
-        'build'
+        'buildAll'
     );
   });
 };

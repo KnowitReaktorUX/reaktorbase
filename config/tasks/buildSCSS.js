@@ -10,15 +10,12 @@ const runSequence = require('run-sequence');
 const manifestfile = require('../tasks/manifestfile');
 
 module.exports = function (gulp, plugins) {
-  return gulp.task('build', () => {
+  return gulp.task('buildSCSS', () => {
     if (!process.env.NODE_ENV) process.env.NODE_ENV = 'production';
 
-    util.log(util.colors.cyan(`Building frontend for environment ${process.env.NODE_ENV}`));
-    return clean([process.env.BUILD_PATH + 'stylesheets', process.env.BUILD_PATH + 'js', process.env.BUILD_PATH + 'mockups'])
-                  .then(eslint)
-                  .then(js)
+    util.log(util.colors.cyan(`Building SCSS for environment ${process.env.NODE_ENV}`));
+    return clean([process.env.BUILD_PATH + 'stylesheets'])
                   .then(sass)
-                  .then(assemble)
                   .then(copy)
                   /*.then(() => {
                     runSequence(
